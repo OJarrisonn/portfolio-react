@@ -1,2 +1,2 @@
-# portifolio-react
-My portifolio website made with react
+# Portfolio React
+My portfolio website made with react
