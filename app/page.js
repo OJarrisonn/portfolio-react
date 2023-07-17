@@ -1,5 +1,5 @@
 'use client';
-
+import Image from 'next/image'
 
 const sections = [ "home", "about", "projects", "contact" ];
 
@@ -8,25 +8,60 @@ const menuNames = {
   "about": "Sobre",
   "projects": "Projetos",
   "contact": "Contato"
-}
+};
 
 const sectionsTitle = {
   "home": "",
   "about": "Quem sou eu?",
   "projects": "Projetos",
   "contact": "Contato"
-}
+};
 
 const sectionsContent = {
   "home": <ContentHome />,
   "about": <ContentAbout />,
   "projects": <ContentProjects />,
   "contact": <ContentContact />
-}
+};
 
 const homeTexts = {
   "welcome": "Seja bem-vindo ao meu site!",
   "introduction": "Olá, muito prazer. Eu sou o Harrisonn e este site tem como objetivo ser um portifólio onde irei deixar registrados alguns de meus projetos, quem eu sou e conquistas que alcancei.\nO site foi todo criado por mim, fique a vontade para enviar sugestões de melhorias para a página :)"
+};
+
+const projects = [
+  {
+    "name": "The Spaceship",
+    "link": "https://gamejolt.com/games/the_spaceship/461761",
+    "description": "The Spaceship é um shooter 2D onde você controla uma pequena espaço-nave em meio a um perigoso cinturão de asteroides. Cuidado com os aliens!",
+    "image": "https://m.gjcdn.net/game-screenshot/1500/2734889-ll-ruqvpxky-v4.webp",
+    "status": "Encerrado",
+    "type": "Jogo"
+  }, {
+    "name": "Nether Extra Update",
+    "link": "https://www.curseforge.com/minecraft/mc-mods/nether-extra-update",
+    "description": "Nether EU é um mod de Minecraft lançado para aprimorar a atualização 1.16 do jogo, conhecida como Nether Update.",
+    "image": "/imgs/nethereu.png",
+    "status": "Encerrado",
+    "type": "Jogo"
+  }, {
+    "name": "IC P4",
+    "link": "",
+    "description": "Projeto de iniciação científica orientado pelo Prof. Daniel Macêdo Batista no IME-USP com objetivo de utilizar a linguagem P4 para criação de switches inteligentes usando Raspberry Pi.",
+    "image": "/imgs/p4logo.jpeg",
+    "status": "Em desenvolvimento",
+    "type": "Pesquisa"
+  },
+];
+
+const projectTagClass = {
+  "Encerrado": "tag-finished",
+  "Em desenvolvimento": "tag-wip",
+  "Lançado": "tag-launched",
+
+  "Jogo": "tag-game",
+  "Pesquisa": "tag-research",
+  "Aplicativo": "tag-app"
 }
 
 const aboutTexts = {
@@ -39,6 +74,7 @@ const aboutTexts = {
   ]
 }
 
+// Main component ==============================================================================================================================
 export default function Home() {
   return (
     <>
@@ -47,6 +83,8 @@ export default function Home() {
     </>
   );
 }
+
+// Header components -----------------------------------------------------------------------------
 
 function Header() {
   return (
@@ -84,88 +122,124 @@ function MenuToggle() {
   return (
     <button className="button-set-toggle">X</button>
     );
-  }
+}
+
+// Main components -------------------------------------------------------------------------------
   
-  function Main() {
-    let mainContent = [];
+function Main() {
+  let mainContent = [];
 
-    sections.forEach(section => {
-      mainContent.push(
-        <Separator height={4}/>
+  sections.forEach(section => {
+    mainContent.push(
+      <Separator height={4}/>
+    );
+    mainContent.push(
+      <Section id={section} content={sectionsContent[section]} />
+    );
+  });
+  
+  return (
+    <>
+      { mainContent }
+    </>
+  );
+}
+
+function Section({ id, content }) {
+  const titleComponent = sectionsTitle[id] 
+    ? <h1 className="section-title">{ sectionsTitle[id] }</h1> 
+    : <></>;
+  
+  return (
+    <section id={ id }>
+      { titleComponent }
+
+      <div className="section-content">
+        { content }
+      </div>
+    </section>
+  );
+}
+
+function ContentHome() {
+  return (
+    <div className="content-home">
+      <h1>{ homeTexts["welcome"] }</h1>
+      <p>{ homeTexts["introduction"] }</p>
+    </div>
+  );
+}
+
+function ContentAbout() {
+  let contentAbout = [];
+
+  for (let i = 0; i < aboutTexts["sections"]; i++) {
+    contentAbout.push(
+      <h2>{ aboutTexts["titles"][i] }</h2>
+    );
+    contentAbout.push(
+      <p>{ aboutTexts["texts"][i] }</p>
+    );
+
+    if (i < aboutTexts["sections"] + 1) 
+      contentAbout.push(
+        <Separator height={1}/>
       );
-      mainContent.push(
-        <Section id={section} content={sectionsContent[section]} />
-      );
-    });
-    
-    return (
+  }
+
+  return (
+    <div className="content-about">
+      {contentAbout}
+    </div>
+  );
+}
+
+function ContentProjects() {
+  let contentProjects = [];
+
+  projects.map(project => {
+    contentProjects.push(<Project project={project} />); 
+  })
+
+  return (
+    <div className="content-projects">
+      { contentProjects }
+    </div>
+  );
+}
+
+function Project({ project }) {
+  const imgSize = (Math.max(window.innerHeight, window.innerWidth) / 4)
+
+  return (
+    <div className="project" onClick={ {} }>
+      <Image src={ project.image } alt={ project.name } width={imgSize} height={imgSize}/>
       <>
-        { mainContent }
-      </>
-    );
-  }
+        <Separator height={1} />
 
-  function Section({ id, content }) {
-    const titleComponent = sectionsTitle[id] 
-      ? <h1 className="section-title">{ sectionsTitle[id] }</h1> 
-      : <></>;
-    
-    return (
-      <section id={ id }>
-        { titleComponent }
+        <h2>{ project.name }</h2>
+        <p>{ project.description }</p>
 
-        <div className="section-content">
-          { content }
+        <Separator height={1} />
+
+        <div className='tag-set'>
+          <p className={'tag ' + projectTagClass[project.status] }>{ project.status }</p>
+          <p className={'tag ' + projectTagClass[project.type] }>{ project.type }</p>
         </div>
-      </section>
-    );
-  }
+      </>
+      
+    </div>
+  );
+}
 
-  function ContentHome() {
-    return (
-      <div className="content-home">
-        <h1>{ homeTexts["welcome"] }</h1>
-        <p>{ homeTexts["introduction"] }</p>
-      </div>
-    );
-  }
+function ContentContact() {
+  return (
+    <p>Content Contact</p>
+  );
+}
 
-  function ContentAbout() {
-    let contentAbout = [];
+// Separator ===========================================================================================================================================
 
-    for (let i = 0; i < aboutTexts["sections"]; i++) {
-      contentAbout.push(
-        <h2>{ aboutTexts["titles"][i] }</h2>
-      );
-      contentAbout.push(
-        <p>{ aboutTexts["texts"][i] }</p>
-      );
-
-      if (i < aboutTexts["sections"] + 1) 
-        contentAbout.push(
-          <Separator height={1}/>
-        );
-    }
-
-    return (
-      <div className="content-about">
-        {contentAbout}
-      </div>
-    );
-  }
-
-  function ContentProjects() {
-    return (
-      <p>Content Projects</p>
-    );
-  }
-
-  function ContentContact() {
-    return (
-      <p>Content Contact</p>
-    );
-  }
-
-  function Separator({ height }) {
-    return <div style={{marginTop: height + "em"}}></div>
-  }
+function Separator({ height }) {
+  return <div style={{marginTop: height + "em"}}></div>
+}

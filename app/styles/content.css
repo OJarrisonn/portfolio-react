@@ -4,7 +4,7 @@
 
 .content-home h1 {
     color: var(--night);
-    background: linear-gradient(135deg, var(--lemon-chiffon) 50%, var(--tropical-indigo) 100%);
+    background: linear-gradient(-45deg, var(--tropical-indigo) 10%, var(--lemon-chiffon) 100%);
 
     margin-bottom: 1em;
 
@@ -23,6 +23,8 @@
     text-align: justify;
 }
 
+
+
 .content-about h2 {
     font-size: 2em;
 
@@ -32,4 +34,97 @@
 
 .content-about p {
     text-align: justify;
+}
+
+.content-projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+
+    gap: 1em;
+}
+
+.project {
+    max-width: 20em;
+    min-width: 15em;
+
+    padding: 1em;
+
+    border-radius: 1em;
+
+    color: var(--seasalt);
+
+    background-color: var(--raisin-black);
+}
+
+.project img {
+    max-width: 18em;
+    max-height: 18em;
+
+    border-radius: 1em;
+}
+
+.project h2 {
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 900;
+}
+
+.project p {
+
+}
+
+.tag-set {
+    display: flex; 
+    flex-direction: row; 
+    gap: .75em;
+}
+
+.tag {
+    padding: .5em;
+
+    border-radius: .5em;
+
+    font-size: 0.75em;
+
+    font-weight: 700;
+}
+
+.tag-finished {
+    color: var(--seasalt);
+    background-color: var(--rojo);
+}
+
+.tag-wip {
+    color: var(--seasalt);
+    background-color: var(--majorelle-blue);
+}
+
+.tag-launched {
+    color: var(--seasalt);
+    background-color: var(--lime-green);
+}
+
+.tag-research {
+    color: var(--night);
+    background-color: var(--aureolin);
+}
+
+.tag-game {
+    color: var(--seasalt);
+    background-color: var(--crayola);
+}
+
+.tag-app {
+    color: var(--night);
+    background-color: var(--turquoise);
+}
+
+@media screen and (max-width: 1000px) {
+
+.content-home h1 {
+    font-size: 3em;
+}
+
 }
