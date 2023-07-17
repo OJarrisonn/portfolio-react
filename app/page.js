@@ -209,7 +209,9 @@ function ContentProjects() {
 }
 
 function Project({ project }) {
-  const imgSize = (Math.max(window.innerHeight, window.innerWidth) / 4)
+  const imgSize = typeof window !== undefined 
+    ? (Math.max(window.innerHeight, window.innerWidth) / 4)
+    : 100;
 
   return (
     <div className="project" onClick={ {} }>
