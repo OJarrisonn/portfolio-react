@@ -209,7 +209,7 @@ function ContentProjects() {
 }
 
 function Project({ project }) {
-  const imgSize = 200;
+  const imgSize = 500;
 
   return (
     <div className="project" onClick={ {} }>
