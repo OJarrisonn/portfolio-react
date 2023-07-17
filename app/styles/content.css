@@ -41,7 +41,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     gap: 1em;
 }
@@ -69,10 +69,6 @@
 .project h2 {
     font-family: 'Red Hat Display', sans-serif;
     font-weight: 900;
-}
-
-.project p {
-
 }
 
 .tag-set {
@@ -120,6 +116,50 @@
     color: var(--night);
     background-color: var(--turquoise);
 }
+
+.content-contact {
+    display: grid;
+    
+    grid-template-columns: auto auto auto;
+
+    gap: 1em;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+
+    height: 4em;
+    width: auto;
+
+    padding: .5em;
+
+    border-radius: 1em;
+
+    color: var(--seasalt);
+
+    background-color: var(--raisin-black);
+}
+
+.contact img {
+    width: 3em;
+    height: 3em;
+}
+
+.contact p {
+    font-weight: 700;
+}
+
+.project:hover, .contact:hover {
+    scale: 1.025;
+
+    color: var(--night);
+
+    background: linear-gradient(-45deg, var(--tropical-indigo) 10%, var(--lemon-chiffon) 100%);
+}
+
 
 @media screen and (max-width: 1000px) {
 

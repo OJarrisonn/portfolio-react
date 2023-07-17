@@ -36,7 +36,7 @@
 
     background-color: transparent;
 
-    padding: 1em;
+    padding: .5em 1em;
     
     border-style: none;
     border-radius: .5em;
@@ -47,7 +47,9 @@
 
 .header button:hover {
     color: var(--night);
-    background-color: var(--flax);
+
+    background: linear-gradient(-45deg, var(--tropical-indigo) 10%, var(--lemon-chiffon) 100%);
+
 }
 
 .button-set {
