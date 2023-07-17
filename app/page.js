@@ -1,113 +1,171 @@
-import Image from 'next/image'
+'use client';
+
+
+const sections = [ "home", "about", "projects", "contact" ];
+
+const menuNames = {
+  "home": "Início",
+  "about": "Sobre",
+  "projects": "Projetos",
+  "contact": "Contato"
+}
+
+const sectionsTitle = {
+  "home": "",
+  "about": "Quem sou eu?",
+  "projects": "Projetos",
+  "contact": "Contato"
+}
+
+const sectionsContent = {
+  "home": <ContentHome />,
+  "about": <ContentAbout />,
+  "projects": <ContentProjects />,
+  "contact": <ContentContact />
+}
+
+const homeTexts = {
+  "welcome": "Seja bem-vindo ao meu site!",
+  "introduction": "Olá, muito prazer. Eu sou o Harrisonn e este site tem como objetivo ser um portifólio onde irei deixar registrados alguns de meus projetos, quem eu sou e conquistas que alcancei.\nO site foi todo criado por mim, fique a vontade para enviar sugestões de melhorias para a página :)"
+}
+
+const aboutTexts = {
+  "sections": 3,
+  "titles": ["Minhas Origens", "Como Conheci a Computação?", "Meu Futuro"],
+  "texts": [
+    "Eu me chamo Jorge Harrisonn Mantovanelli Thomes Vieira, sou originário do norte do Espírito Santo e fui criado no interior da cidade de Jaguaré-ES pelos meus avós. Por que fui criado pelos meus avós? Pois sou órfão de pai e mãe, então eles me criaram no interior.\nPor morar no interior, eu cresci um pouco isolado de outras pessoas e com isso, eu passava muito tempo com meus brinquedos e investigando tudo que podia para saber o porquê e o como. Aprender era um dos meus passatempos favoritos.\nEu nunca estava satisfeito com meus brinquedos, eu sempre queria inventar os meus próprios brinquedos. Tinha vários carrinhos, mas eu adorava montar carrinhos de papel. Até que um dia, meus avós resolveram correr atrás de instalar internet e comprar um notebook. Inicialmente eu não gostava de mexer no notebook, pois eu tinha medo de estragar ele, mas com o tempo o medo passou e ali se abriu uma nova janela para eu continuar pesquisando e explorando o incrivel mundo da internet (através de um modem bastante ruim).",
+    "Em um dado momento, eu quis descobrir um novo como. Como eram feitos os jogos? Foi aí que eu descobri a programação. Caí em um vídeo do YouTube que ensinava a criar um clone do jogo do dinossauro do Chrome. Tenho esse jogo salvo até hoje. É um jogo bastante simples, com sprites muito mal feitas (eu tinha 12 anos e estava desenhando usando o touchpad do meu notebook), mas era o meu próprio jogo. Eu fiquei encantado com aquilo, embora nenhuma das pessoas para quem eu mostrei o jogo se pareceu muito impressionada. Mas foi aí que eu escolhi a Ciência da Computação como meu futuro.\nMeus anos seguintes foram basicamente desbravando esse mundo da programação para entender como outras coisas eram feitas. Aprendi mais sobre jogos, sobre sites, sobre hardware, sobre mods para Minecraft (meu jogo favorito), mas nunca conseguia me organizar para criar e terminar projetos.\nAté que eu entrei no Instituto Federal de Educação, Ciência e Tecnologia do Espírito Santo, também conhecido como IFES. Lá fiz um curso técnico em Automação Industrial integrado ao meu ensino médio. Tive professores que estavam mais ligados à área da computação e por influência de amigos e professores tentei a FUVEST e consegui entrar para a Universidade de São Paulo para fazer o tão sonhado curso de Ciência da Computação.",
+    "Agora na USP eu comecei a me aprofundar de fato em campos mais específicos da computação, como sistemas, redes de computadores, desenvolvimento Web e Linux. Meus objetivos para depois da faculdade envolvem trabalhar como desenvolvedor. Eu me sinto feliz criando coisas e é isso que eu quero fazer."
+  ]
+}
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    <>
+      <Header />
+      <Main />
+    </>
+  );
 }
+
+function Header() {
+  return (
+    <div className="header">
+      <h1>Harrisonn</h1>
+      <MenuToggle />
+      <Menu />
+    </div>
+  );
+}
+
+function Menu() {
+  let buttons = [];
+  
+  sections.forEach(anchor => {
+    buttons.push(
+      <MenuButton text={ menuNames[anchor] } anchor={ anchor } />
+      );
+    });
+    
+  return (
+    <div className="button-set"> { buttons } </div>
+  );
+}
+    
+function MenuButton({ text, anchor }) {
+  return (
+        <button onClick={() => { location.href="#" + anchor; } }>
+      { text }
+    </button>
+  );
+}
+
+function MenuToggle() {
+  return (
+    <button className="button-set-toggle">X</button>
+    );
+  }
+  
+  function Main() {
+    let mainContent = [];
+
+    sections.forEach(section => {
+      mainContent.push(
+        <Separator height={4}/>
+      );
+      mainContent.push(
+        <Section id={section} content={sectionsContent[section]} />
+      );
+    });
+    
+    return (
+      <>
+        { mainContent }
+      </>
+    );
+  }
+
+  function Section({ id, content }) {
+    const titleComponent = sectionsTitle[id] 
+      ? <h1 className="section-title">{ sectionsTitle[id] }</h1> 
+      : <></>;
+    
+    return (
+      <section id={ id }>
+        { titleComponent }
+
+        <div className="section-content">
+          { content }
+        </div>
+      </section>
+    );
+  }
+
+  function ContentHome() {
+    return (
+      <div className="content-home">
+        <h1>{ homeTexts["welcome"] }</h1>
+        <p>{ homeTexts["introduction"] }</p>
+      </div>
+    );
+  }
+
+  function ContentAbout() {
+    let contentAbout = [];
+
+    for (let i = 0; i < aboutTexts["sections"]; i++) {
+      contentAbout.push(
+        <h2>{ aboutTexts["titles"][i] }</h2>
+      );
+      contentAbout.push(
+        <p>{ aboutTexts["texts"][i] }</p>
+      );
+
+      if (i < aboutTexts["sections"] + 1) 
+        contentAbout.push(
+          <Separator height={1}/>
+        );
+    }
+
+    return (
+      <div className="content-about">
+        {contentAbout}
+      </div>
+    );
+  }
+
+  function ContentProjects() {
+    return (
+      <p>Content Projects</p>
+    );
+  }
+
+  function ContentContact() {
+    return (
+      <p>Content Contact</p>
+    );
+  }
+
+  function Separator({ height }) {
+    return <div style={{marginTop: height + "em"}}></div>
+  }

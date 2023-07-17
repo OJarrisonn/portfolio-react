@@ -1,0 +1,82 @@
+@import url(vars.css);
+
+.header {
+    color: var(--seasalt);
+
+    background: var(--night);
+    background: linear-gradient(165deg, var(--night) 60%, var(--unsat-tropical-indigo) 100%);
+
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+
+    padding: 2em;
+
+    border-radius: 0 0 1em 1em;
+
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+
+.header h1 {
+    margin: 0;
+
+    font-size: 4em;
+    
+    text-align: center;
+    
+    line-height: .5em; 
+}
+
+.header button {
+    color: var(--seasalt);
+
+    background-color: transparent;
+
+    padding: 1em;
+    
+    border-style: none;
+    border-radius: .5em;
+
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 1.25em;
+}
+
+.header button:hover {
+    color: var(--night);
+    background-color: var(--flax);
+}
+
+.button-set {
+    display: flex;
+    gap: 1em;
+}
+
+.header .button-set-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    /* Elementos do cabeçalho */
+
+    .header {
+        flex-direction: column;
+    }
+
+    .header h1 {
+        margin-bottom: 0;
+        font-size: 2em;
+    }
+
+    .header h1 span {
+        display: none;
+    }
+
+    .header button {
+        padding: .5em 1em;
+    
+        font-size: 1em;
+    }
+}

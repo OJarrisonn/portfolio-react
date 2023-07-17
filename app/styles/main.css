@@ -1,0 +1,29 @@
+.section-title {
+    color: var(--seasalt);
+    background-color: var(--night);
+
+    width: fit-content;
+
+    margin: 0 auto 0 auto;
+
+    padding: .5em 1em;
+
+    border-bottom: 0.125em solid var(--majorelle-blue);
+    border-radius: .5em .5em 0 0;
+
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 2em;
+
+    text-align: center;
+}
+
+.section-content {
+    background-color: var(--glassy-night);
+
+    margin: 0 1em;
+
+    padding: 2em;
+
+    border-radius: .5em;
+
+}

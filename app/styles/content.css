@@ -1,0 +1,34 @@
+.content-home {
+    gap: 2em;
+}
+
+.content-home h1 {
+    color: var(--night);
+    background: linear-gradient(135deg, var(--lemon-chiffon) 50%, var(--tropical-indigo) 100%);
+
+    margin-bottom: 1em;
+
+    padding: 1em;
+
+    border-radius: 0.2em;
+
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 900;
+    font-size: 4em;
+
+    text-align: center;
+}
+
+.content-home p {
+    text-align: justify;
+}
+
+.content-about h2 {
+    font-size: 2em;
+
+    font-weight: 700;
+}
+
+.content-about p {
+    text-align: justify;
+}
