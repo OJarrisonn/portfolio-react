@@ -51,7 +51,7 @@ export default function Home() {
 function Header() {
   return (
     <div className="header">
-      <h1>Harrisonn</h1>
+      <h1>HARRISONN</h1>
       <MenuToggle />
       <Menu />
     </div>
