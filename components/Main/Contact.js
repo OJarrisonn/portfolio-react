@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import content from '../../styles/content.module.css'
+import content from '/app/styles/content.module.css'
 
 let contacts = [
     {

@@ -1,4 +1,4 @@
-import content from '../../styles/content.module.css'
+import content from '/app/styles/content.module.css'
 
 const homeTexts = {
     "welcome": "Seja bem-vindo ao meu site!",

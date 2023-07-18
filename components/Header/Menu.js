@@ -1,6 +1,6 @@
 'use client';
 
-import header from '../../styles/header.module.css'
+import header from '/app/styles/header.module.css'
 
 const sections = [ "home", "about", "projects", "contact" ];
 

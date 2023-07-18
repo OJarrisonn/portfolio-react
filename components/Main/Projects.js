@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import { Separator } from '../Util';
 
-import content from '../../styles/content.module.css'
+import content from '/app/styles/content.module.css'
 
 const projects = [
     {

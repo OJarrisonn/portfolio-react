@@ -2,7 +2,7 @@ import { Separator } from "./Util";
 
 import { Menu, MenuToggle } from "./Header/Menu";  
 
-import header from '../styles/header.module.css'
+import header from '/app/styles/header.module.css'
 
 export default function Header() {
     return (

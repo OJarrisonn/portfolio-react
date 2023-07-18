@@ -4,7 +4,7 @@ import ContentAbout from "./Main/About";
 import ContentProjects from "./Main/Projects";
 import ContentContact from "./Main/Contact";
 
-import main from '../styles/main.module.css'
+import main from '/app/styles/main.module.css'
 
 const sections = [ "home", "about", "projects", "contact" ];
 
