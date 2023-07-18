@@ -1,5 +1,3 @@
-'use client'
-
 import { Separator }  from "./Util";
 import ContentHome from "./Main/Home";
 import ContentAbout from "./Main/About";
