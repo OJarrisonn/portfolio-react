@@ -4,7 +4,7 @@ import ContentAbout from "./Main/About";
 import ContentProjects from "./Main/Projects";
 import ContentContact from "./Main/Contact";
 
-
+import main from '../styles/main.module.css'
 
 const sections = [ "home", "about", "projects", "contact" ];
 
@@ -44,14 +44,14 @@ export default function Main() {
   
 function Section({ id, content }) {
     const titleComponent = sectionsTitle[id] 
-        ? <h1 className="section-title">{ sectionsTitle[id] }</h1> 
+        ? <h1 className={ main.title }>{ sectionsTitle[id] }</h1> 
         : <></>;
 
     return (
         <section id={ id }>
         { titleComponent }
 
-        <div className="section-content">
+        <div className={ main.content }>
             { content }
         </div>
         </section>

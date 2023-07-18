@@ -1,6 +1,4 @@
-@import url(./vars.css);
-
-.section-title {
+.title {
     color: var(--seasalt);
     background-color: var(--night);
 
@@ -20,7 +18,7 @@
     text-align: center;
 }
 
-.section-content {
+.content {
     background-color: var(--glassy-night);
 
     margin: 0 1em;

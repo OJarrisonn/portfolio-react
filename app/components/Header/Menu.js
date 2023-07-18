@@ -1,5 +1,7 @@
 'use client';
 
+import header from '../../styles/header.module.css'
+
 const sections = [ "home", "about", "projects", "contact" ];
 
 const menuNames = {
@@ -21,7 +23,7 @@ export function Menu() {
     });
       
     return (
-        <div className="button-set"> { buttons } </div>
+        <div className={ header.menu }> { buttons } </div>
     );
 }
   
@@ -37,6 +39,6 @@ function MenuButton({ text, anchor }) {
 
 export function MenuToggle() {
     return (
-        <button className="button-set-toggle">X</button>
+        <button className={ header.toggle }>X</button>
     );
 }

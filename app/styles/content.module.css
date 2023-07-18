@@ -1,10 +1,8 @@
-@import url(./vars.css);
-
-.content-home {
+.home {
     gap: 2em;
 }
 
-.content-home h1 {
+.home h1 {
     color: var(--night);
     background: linear-gradient(-45deg, var(--tropical-indigo) 10%, var(--lemon-chiffon) 100%);
 
@@ -21,24 +19,24 @@
     text-align: center;
 }
 
-.content-home p {
+.home p {
     text-align: justify;
 }
 
 
 
-.content-about h2 {
+.about h2 {
     font-size: 2em;
 
     font-family: 'Red Hat Display', sans-serif;
     font-weight: 900;
 }
 
-.content-about p {
+.about p {
     text-align: justify;
 }
 
-.content-projects {
+.projects {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -59,11 +57,13 @@
     color: var(--seasalt);
 
     background-color: var(--raisin-black);
+
+    text-decoration: none;
 }
 
 .project img {
-    max-width: 18em;
-    max-height: 18em;
+    max-width: 20em;
+    max-height: 20em;
 
     border-radius: 1em;
 }
@@ -73,7 +73,7 @@
     font-weight: 900;
 }
 
-.tag-set {
+.tagSet {
     display: flex; 
     flex-direction: row; 
     gap: .75em;
@@ -89,40 +89,42 @@
     font-weight: 700;
 }
 
-.tag-finished {
+.tagFinished {
     color: var(--seasalt);
     background-color: var(--rojo);
 }
 
-.tag-wip {
+.tagWip {
     color: var(--seasalt);
     background-color: var(--majorelle-blue);
 }
 
-.tag-launched {
+.tagLaunched {
     color: var(--night);
     background-color: var(--lime-green);
 }
 
-.tag-research {
+.tagResearch {
     color: var(--night);
     background-color: var(--aureolin);
 }
 
-.tag-game {
+.tagGame {
     color: var(--seasalt);
     background-color: var(--crayola);
 }
 
-.tag-app {
+.tagApp {
     color: var(--night);
     background-color: var(--turquoise);
 }
 
-.content-contact {
+.contacts {
     display: grid;
     
     grid-template-columns: auto auto auto auto;
+    margin-left: auto;
+    margin-right: auto;
 
     gap: 1em;
 }
@@ -143,11 +145,13 @@
     color: var(--seasalt);
 
     background-color: var(--raisin-black);
+
+    text-decoration: none;
 }
 
 .contact img {
-    width: 3em;
-    height: 3em;
+    width: 4em;
+    height: 4em;
 
     border-radius: .5em;
 }
@@ -167,17 +171,17 @@
 
 @media screen and (max-width: 1000px) {
 
-.content-home h1 {
+.home h1 {
     font-size: 3em;
 }
 
-.content-contact {
+.contacts {
     margin-left: auto;
     margin-right: auto;
 
-    width: fit-content;
+    width: min-content;
 
-    gap: auto;
+    gap: 2em;
 }
 
 .contact {

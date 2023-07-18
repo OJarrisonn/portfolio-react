@@ -1,5 +1,6 @@
 import { Separator } from "../Util";
 
+import content from '../../styles/content.module.css'
 
 const aboutTexts = {
     "sections": 3,
@@ -29,7 +30,7 @@ export default function ContentAbout() {
     }
   
     return (
-      <div className="content-about">
+      <div className={ content.about }>
         {contentAbout}
       </div>
     );

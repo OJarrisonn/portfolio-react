@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-
+import content from '../../styles/content.module.css'
 
 let contacts = [
     {
@@ -31,7 +31,7 @@ export default function ContentContact() {
     });
   
     return (
-        <div className='content-contact'>
+        <div className={ content.contacts }>
             { contentContact }
         </div>
     );
@@ -40,7 +40,7 @@ export default function ContentContact() {
 // TODO: Add link
 function Contact({ contact }) {
     return (
-        <a className='contact' href={ contact.link } target='_blank'>
+        <a className={ content.contact } href={ contact.link } target='_blank'>
             <Image src={ contact.image } alt={ contact.name } width={100} height={100} />
             <p>{ contact.name }</p>
         </a>

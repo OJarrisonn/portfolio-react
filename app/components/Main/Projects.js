@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import { Separator } from '../Util';
 
-
+import content from '../../styles/content.module.css'
 
 const projects = [
     {
@@ -31,13 +31,13 @@ const projects = [
 ];
   
 const projectTagClass = {
-    "Encerrado": "tag-finished",
-    "Em desenvolvimento": "tag-wip",
-    "Lançado": "tag-launched",
+    "Encerrado": content.tagFinished,
+    "Em desenvolvimento": content.tagWip,
+    "Lançado": content.tagLaunched,
   
-    "Jogo": "tag-game",
-    "Pesquisa": "tag-research",
-    "Aplicativo": "tag-app"
+    "Jogo": content.tagGame,
+    "Pesquisa": content.tagResearch,
+    "Aplicativo": content.tagApp
 }
 
   
@@ -50,7 +50,7 @@ export default function ContentProjects() {
     })
   
     return (
-      <div className="content-projects">
+      <div className={ content.projects }>
         { contentProjects }
       </div>
     );
@@ -61,7 +61,7 @@ function Project({ project }) {
     const imgSize = 500;
 
     return (
-    <a className="project" href={ project.link } target='_blank'>
+    <a className={ content.project } href={ project.link } target='_blank'>
         <Image src={ project.image } alt={ project.name } width={imgSize} height={imgSize}/>
         
         <>
@@ -72,9 +72,9 @@ function Project({ project }) {
 
             <Separator size={1} orientation={'horizontal'} />
 
-            <div className='tag-set'>
-                <p className={'tag ' + projectTagClass[project.status] }>{ project.status }</p>
-                <p className={'tag ' + projectTagClass[project.type] }>{ project.type }</p>
+            <div className={ content.tagSet }>
+                <p className={ content.tag + ' ' + projectTagClass[project.status] }>{ project.status }</p>
+                <p className={ content.tag + ' ' + projectTagClass[project.type] }>{ project.type }</p>
             </div>
         </>
         

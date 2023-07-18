@@ -3,25 +3,42 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --seasalt: #F7F7F7;
+  --raisin-black: #28262C;
+  --glassy-raisin-black: #28262cdc;
+  --night: #141414;
+  --glassy-night: #141414dc;
+  --periwinkle: #CCCCFF;
+  --tropical-indigo: #8B80F9;
+  --majorelle-blue: #6050DC;
+  --lemon-chiffon: #FFFACD;
+  --flax: #EEDC82;
+  --unsat-tropical-indigo: #7b74ca;
+  --glaucous: #6b7fd7;
+  --lime-green: #32cd32;
+  --aureolin: #fdec00;
+  --rojo: #e60026;
+  --orange-peel: #FF9F1C;
+  --crayola: #ea526f;
+  --turquoise: #72e1d1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--seasalt);
+
+  background-color: var(--raisin-black);
+  background-image: url('./imgs/background_sd.jpg');
+
+  margin: 0;
+
+  font-size: 16px;
+
+  font-family: 'Inter', sans-serif;
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+      font-size: 14px;
+  }
 }
