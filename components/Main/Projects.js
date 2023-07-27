@@ -27,6 +27,13 @@ const projects = [
         "image": "/imgs/p4logo.jpeg",
         "status": "Em desenvolvimento",
         "type": "Pesquisa"
+    }, {
+        "name": "diysh",
+        "link": "https://crates.io/crates/diysh",
+        "description": "Uma biblioteca para criação de interfaces de texto estilo shell para aplicações em Rust",
+        "image": "https://user-images.githubusercontent.com/1149913/62262785-f920bb80-b3e7-11e9-9003-cc21146c4278.png",
+        "status": "Lançado",
+        "type": "Aplicativo"
     },
 ];
   
