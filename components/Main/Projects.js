@@ -20,14 +20,14 @@ const projects = [
         "image": "/imgs/nethereu.png",
         "status": "Lançado",
         "type": "Jogo"
-    }, {
+    }, /*{
         "name": "IC P4",
         "link": "",
         "description": "Projeto de iniciação científica orientado pelo Prof. Daniel Macêdo Batista no IME-USP com objetivo de utilizar a linguagem P4 para criação de switches inteligentes usando Raspberry Pi.",
         "image": "/imgs/p4logo.jpeg",
         "status": "Encerrado",
         "type": "Pesquisa"
-    }, {
+    },*/ {
         "name": "diysh",
         "link": "https://crates.io/crates/diysh",
         "description": "Uma biblioteca para criação de interfaces de texto estilo shell para aplicações em Rust",
