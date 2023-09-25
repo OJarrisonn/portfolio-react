@@ -25,7 +25,7 @@ const projects = [
         "link": "",
         "description": "Projeto de iniciação científica orientado pelo Prof. Daniel Macêdo Batista no IME-USP com objetivo de utilizar a linguagem P4 para criação de switches inteligentes usando Raspberry Pi.",
         "image": "/imgs/p4logo.jpeg",
-        "status": "Em desenvolvimento",
+        "status": "Encerrado",
         "type": "Pesquisa"
     }, {
         "name": "diysh",
