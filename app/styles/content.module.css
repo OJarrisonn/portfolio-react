@@ -119,6 +119,11 @@
     background-color: var(--turquoise);
 }
 
+.tagLib {
+    color: var(--night);
+    background-color: var(--orange-peel);
+}
+
 .contacts {
     display: grid;
     

@@ -32,8 +32,22 @@ const projects = [
         "link": "https://crates.io/crates/diysh",
         "description": "Uma biblioteca para criação de interfaces de texto estilo shell para aplicações em Rust",
         "image": "https://user-images.githubusercontent.com/1149913/62262785-f920bb80-b3e7-11e9-9003-cc21146c4278.png",
+        "status": "Encerrado",
+        "type": "Biblioteca"
+    },{
+        "name": "krush-engine",
+        "link": "https://crates.io/crates/krush-engine",
+        "description": "Uma biblioteca para criação de um interpretador de comandos em Rust",
+        "image": "/imgs/krush-engine.png",
         "status": "Lançado",
-        "type": "Aplicativo"
+        "type": "Biblioteca"
+    },{
+        "name": "arcl",
+        "link": "https://github.com/OJarrisonn/Arcl",
+        "description": "O projeto de uma linaguagem de programação que visa paralelismo a dinamicidade",
+        "image": "/imgs/arcl.png",
+        "status": "Em desenvolvimento",
+        "type": "Pesquisa"
     },
 ];
   
@@ -44,7 +58,8 @@ const projectTagClass = {
   
     "Jogo": content.tagGame,
     "Pesquisa": content.tagResearch,
-    "Aplicativo": content.tagApp
+    "Aplicativo": content.tagApp,
+    "Biblioteca": content.tagLib
 }
 
   
